@@ -1,7 +1,7 @@
-.form__taskList{
+.section__taskList{
   padding: 5px;
 }
-.form__taskItem {
+.section__taskItem {
   display: flex;
   flex-direction: row;
   width: 100%;

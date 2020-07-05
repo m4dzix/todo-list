@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/style/main.css">
   <link rel="stylesheet" href="/style/header.css">
   <link rel="stylesheet" href="/style/form.css">
-  <link rel="stylesheet" href="/style/formList.css">
+  <link rel="stylesheet" href="/style/tasksList.css">
   <script defer src="script.js"></script>
 </head>
 
@@ -26,13 +26,15 @@
         <label><input class="form__input js-input" name="task" type="text" required></label>
         <button class="form__button">add task</button>
       </form>
-      <ul class="form__taskList">
-        <li class="form__taskItem"><button class="taskItem__button taskItem__button--doneTask js-done"><i
+      <section class="tasks">
+      <ul class="section__taskList">
+        <li class="section__taskItem"><button class="taskItem__button taskItem__button--doneTask js-done"><i
               class="fas fa-plus"></i><i class="fas fa-check hide"></i></button>
           <p>eat breakfast</p><button class=" taskItem__button taskItem__button--removeTask js-remove"><i
               class="fas fa-trash"></i></button>
         </li>
       </ul>
+    </section>
     </main>
 
   </div>
