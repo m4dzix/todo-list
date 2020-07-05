@@ -44,9 +44,10 @@
   background-color: chartreuse;
   box-shadow: .5px .5px 3px 3px black;
 }
-.taskItem__button:hover{
-opacity: .7;
-cursor: pointer;
+
+.taskItem__button:hover {
+  opacity: .7;
+  cursor: pointer;
 }
 
 .taskItem__button--doneTask {
@@ -55,4 +56,14 @@ cursor: pointer;
 
 .taskItem__button--removeTask {
   background-color: crimson;
+}
+
+i {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-size: 20px;
+}
+
+.hide {
+  display: none
 }
