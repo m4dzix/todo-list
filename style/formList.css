@@ -1,18 +1,22 @@
+.form__taskList{
+  padding: 5px;
+}
 .form__taskItem {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  text-transform: uppercase;
+  text-transform: uppercase
 }
 
 .taskItem__button {
   width: 30px;
   height: 30px;
+  margin:10px;
   background-color: chartreuse;
   box-shadow: .5px .5px 3px 3px black;
-   transition: 0.3s;
+  transition: 0.3s;
 }
 
 .taskItem__button:hover {
