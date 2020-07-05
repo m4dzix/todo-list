@@ -4,7 +4,7 @@
   padding: 20px;
   text-align: center;
   background-color: hsl(173, 29%, 83%);
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -27,4 +27,32 @@
   border-radius: 7px;
   box-shadow: 2px 1px 2px 2px rgba(0, 0, 0, .4);
   text-shadow: 1px 1px 2px #222;
+}
+
+.form__taskItem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.taskItem__button {
+  width: 30px;
+  height: 30px;
+  background-color: chartreuse;
+  box-shadow: .5px .5px 3px 3px black;
+}
+.taskItem__button:hover{
+opacity: .7;
+cursor: pointer;
+}
+
+.taskItem__button--doneTask {
+  background-color: chartreuse;
+}
+
+.taskItem__button--removeTask {
+  background-color: crimson;
 }
