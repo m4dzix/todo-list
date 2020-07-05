@@ -1,9 +1,11 @@
 .form {
   margin: 30px 50px;
-  border: 2px solid black;
+  border: 3px solid black;
+  border-radius: 10px;
   padding: 20px;
   text-align: center;
-  background-color: hsl(173, 29%, 83%);
+  background-color: hsl(173, 35%, 73%);
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, .7);
   display: flex;
   flex-direction: column;
 }
@@ -20,7 +22,7 @@
 .form__button {
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
-  padding: 5px;
+  padding: 7px;
   background-color: hsl(173, 32%, 38%);
   font-size: 15px;
   border: 2px solid black;
