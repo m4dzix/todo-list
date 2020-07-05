@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/style/css.css">
+  <link rel="stylesheet" href="/style/main.css">
   <link rel="stylesheet" href="/style/header.css">
   <link rel="stylesheet" href="/style/form.css">
+  <link rel="stylesheet" href="/style/formList.css">
   <script defer src="script.js"></script>
 </head>
 
@@ -19,18 +21,18 @@
     <header class="header">
       <h1 class="header__title">to do list</h1>
     </header>
-    <main>
-      <form class="form">
-        <label><input class="form__input" name="task" type="text" required></label>
+    <main class="main">
+      <form class="form js-form">
+        <label><input class="form__input js-input" name="task" type="text" required></label>
         <button class="form__button">add task</button>
-        <ul class="form__taskList">
-          <li class="form__taskItem"><button class=" taskItem__button taskItem__button--doneTask"><i class="fas fa-plus"></i><i
-                class="fas fa-check hide"></i></button>
-            <p>eat breakfast</p><button class=" taskItem__button taskItem__button--removeTask"><i
-                class="fas fa-trash"></i></button>
-          </li>
-        </ul>
       </form>
+      <ul class="form__taskList">
+        <li class="form__taskItem"><button class="taskItem__button taskItem__button--doneTask js-done"><i
+              class="fas fa-plus"></i><i class="fas fa-check hide"></i></button>
+          <p>eat breakfast</p><button class=" taskItem__button taskItem__button--removeTask js-remove"><i
+              class="fas fa-trash"></i></button>
+        </li>
+      </ul>
     </main>
 
   </div>
