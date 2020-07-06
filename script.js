@@ -29,13 +29,29 @@
 
     tasks[index].done === true ? doneButton.style.backgroundColor = "darkgreen" : doneButton.style.backgroundColor = "chartreuse";
   }
+
+  const toggleIconsIfDone = () => {
+    const plusIcons = document.querySelectorAll(".js-plusIcon");
+    const checkIcons = document.querySelectorAll(".js-checkIcon");
+
+    plusIcons.forEach((plusIcon, index) => {
+
+      tasks[index].done === true ? plusIcon.classList.add("hide") : plusIcon.classList.remove("hide");
+
+    })
+    checkIcons.forEach((plusIcon, index) => {
+
+      tasks[index].done === true ? plusIcon.classList.remove("hide") : plusIcon.classList.add("hide");
+
+    })
+  }
   const render = () => {
 
     let htmlText = "";
 
     for (const task of tasks) {
       htmlText += ` <li     class="section__taskItem"><button class="taskItem__button taskItem__button--doneTask js-done"><i
-      class="js-icon fas fa-plus "></i><i class="js-icon fas fa-check hide"></i></button>
+      class="js-plusIcon fas fa-plus "></i><i class="js-checkIcon fas fa-check hide"></i></button>
       <p class="js-paragraph list__paragraph">${task.content}</p><button class=" taskItem__button taskItem__button--removeTask js-remove"><i
       class="fas fa-trash"></i></button>
       </li>`
@@ -61,16 +77,7 @@
 
         changeButtonColorIfDone(doneButton, index);
         changeParagraphColorIfDone(index);
-
-
-        //   const icons = document.querySelectorAll(".js-icon")
-
-
-        //   icons.forEach((icon) => {
-        //  icon.classList.toggle("hide")
-        //   })
-
-
+        toggleIconsIfDone()
       });
     })
 
