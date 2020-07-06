@@ -12,14 +12,31 @@
     tasks.splice(index, 1);
     render();
   }
+
+
+  const changeParagraphColorIfDone = (index) => {
+    const tasksToDo = document.querySelectorAll(".js-paragraph");
+
+    tasksToDo.forEach((taskToDo, index) => {
+
+      tasks[index].done === true ? taskToDo.style.backgroundColor = "rgba(0,0,0,.5)" : taskToDo.style.backgroundColor = "transparent";
+
+    })
+
+  }
+  const changeButtonColorIfDone = (doneButton, index) => {
+    tasks[index].done = !tasks[index].done;
+
+    tasks[index].done === true ? doneButton.style.backgroundColor = "darkgreen" : doneButton.style.backgroundColor = "chartreuse";
+  }
   const render = () => {
 
     let htmlText = "";
 
     for (const task of tasks) {
       htmlText += ` <li     class="section__taskItem"><button class="taskItem__button taskItem__button--doneTask js-done"><i
-      class="fas fa-plus "></i><i class="fas fa-check hide"></i></button>
-      <p>${task.content}</p><button class=" taskItem__button taskItem__button--removeTask js-remove"><i
+      class="js-icon fas fa-plus "></i><i class="js-icon fas fa-check hide"></i></button>
+      <p class="js-paragraph list__paragraph">${task.content}</p><button class=" taskItem__button taskItem__button--removeTask js-remove"><i
       class="fas fa-trash"></i></button>
       </li>`
 
@@ -35,6 +52,27 @@
 
       });
     });
+
+
+    const doneButtons = document.querySelectorAll(".js-done");
+
+    doneButtons.forEach((doneButton, index) => {
+      doneButton.addEventListener("click", () => {
+
+        changeButtonColorIfDone(doneButton, index);
+        changeParagraphColorIfDone(index);
+
+
+        //   const icons = document.querySelectorAll(".js-icon")
+
+
+        //   icons.forEach((icon) => {
+        //  icon.classList.toggle("hide")
+        //   })
+
+
+      });
+    })
 
   };
 

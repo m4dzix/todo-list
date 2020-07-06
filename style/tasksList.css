@@ -1,6 +1,7 @@
-.section__taskList{
+.section__taskList {
   padding: 5px;
 }
+
 .section__taskItem {
   display: flex;
   flex-direction: row;
@@ -13,7 +14,7 @@
 .taskItem__button {
   width: 30px;
   height: 30px;
-  margin:10px;
+  margin: 10px;
   background-color: chartreuse;
   box-shadow: .5px .5px 3px 3px black;
   transition: 0.3s;
@@ -40,4 +41,8 @@ i {
 
 .hide {
   display: none
+}
+
+.list__paragraph{
+  padding:5px 15px;
 }
