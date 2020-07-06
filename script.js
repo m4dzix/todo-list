@@ -49,7 +49,7 @@
 
       render();
     };
-
+    document.querySelector(".js-newTask").value = ""
   };
 
 
