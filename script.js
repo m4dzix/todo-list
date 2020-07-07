@@ -19,7 +19,7 @@
 
     tasksToDo.forEach((taskToDo, index) => {
 
-      tasks[index].done === true ? taskToDo.style.backgroundColor = "rgba(0,0,0,.5)" : taskToDo.style.backgroundColor = "transparent";
+      (tasks[index].done )=== true ? taskToDo.style.textDecoration = "line-through": taskToDo.style.textDecoration = "none";
 
     })
 
