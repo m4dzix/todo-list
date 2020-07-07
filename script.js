@@ -1,12 +1,5 @@
 {
-  const tasks = [{
-
-    content: "clean the kitchen",
-    done: false,
-  }, {
-    content: "call to mama",
-    done: false,
-  }, ];
+  const tasks = [];
 
   const removeTask = (index) => {
     tasks.splice(index, 1);
@@ -19,7 +12,7 @@
 
     tasksToDo.forEach((taskToDo, index) => {
 
-      (tasks[index].done )=== true ? taskToDo.style.textDecoration = "line-through": taskToDo.style.textDecoration = "none";
+      (tasks[index].done) === true ? taskToDo.style.textDecoration = "line-through" : taskToDo.style.textDecoration = "none";
 
     })
 
