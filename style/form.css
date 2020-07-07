@@ -4,7 +4,7 @@
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  background-color: hsl(173, 35%, 73%);
+  background-color: hsl(34, 41%, 68%);
   box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, .7);
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
   padding: 7px;
-  background-color: hsl(173, 32%, 38%);
+  background-color: hsl(34, 84%, 15%);
   font-size: 15px;
   border: 2px solid black;
   color: white;
@@ -35,7 +35,8 @@
   margin: 0 auto;
   transition: 0.3s;
 }
-.form__button:hover{
-  background-color: hsl(173, 32%, 28%);
-cursor: pointer;
+
+.form__button:hover {
+  background-color: hsl(34, 84%, 11%);
+  cursor: pointer;
 }
