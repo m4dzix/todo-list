@@ -102,7 +102,7 @@
     event.preventDefault();
 
     addNewTask();
-
+    document.querySelector(".js-newTask").focus();
   };
 
 
