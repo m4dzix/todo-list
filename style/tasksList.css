@@ -5,8 +5,9 @@
 .section__taskItem {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
   align-items: center;
   text-transform: uppercase
 }
@@ -43,6 +44,7 @@ i {
   display: none
 }
 
-.list__paragraph{
-  padding:5px 15px;
+.list__paragraph {
+  padding: 5px 15px;
+  overflow: scroll;
 }
