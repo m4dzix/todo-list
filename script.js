@@ -3,12 +3,14 @@
 
   const removeTask = (index) => {
     tasks.splice(index, 1);
-    render();
+    renderTask();
+    renderButtons();
   }
 
   const toggleTaskDone = (doneButton, index) => {
     tasks[index].done = !tasks[index].done;
-    render()
+    renderTask();
+    renderButtons();
 
   }
 
@@ -23,7 +25,7 @@
       });
     });
   }
-  
+
   const bindToggleDoneButtonsEvent = () => {
     const doneButtons = document.querySelectorAll(".js-done");
 
@@ -35,7 +37,7 @@
       });
     })
   }
-  const render = () => {
+  const renderTask = () => {
 
     let htmlText = "";
 
@@ -53,7 +55,8 @@
     };
 
     document.querySelector(".js-taskList").innerHTML = htmlText;
-
+  }
+    const renderButtons = ()=>{
     bindRemoveEvent()
     bindToggleDoneButtonsEvent()
 
@@ -68,7 +71,8 @@
         content: newTaskContent,
       });
 
-      render();
+      renderTask();
+      renderButtons();
     };
     document.querySelector(".js-newTask").value = ""
   };
@@ -83,7 +87,8 @@
 
 
   const init = () => {
-    render();
+    renderTask();
+    renderButtons();
 
 
     const form = document.querySelector(".js-form")
