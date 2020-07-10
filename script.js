@@ -6,47 +6,25 @@
     render();
   }
 
-
-  const changeParagraphColorIfDone = (index) => {
-    const tasksToDo = document.querySelectorAll(".js-paragraph");
-
-    tasksToDo.forEach((taskToDo, index) => {
-
-      (tasks[index].done) === true ? taskToDo.style.textDecoration = "line-through" : taskToDo.style.textDecoration = "none";
-
-    })
-
-  }
-  const changeButtonColorIfDone = (doneButton, index) => {
+  const toggleTaskDone = (doneButton, index) => {
     tasks[index].done = !tasks[index].done;
+render()
 
-    tasks[index].done === true ? doneButton.style.backgroundColor = "darkgreen" : doneButton.style.backgroundColor = "chartreuse";
   }
 
-  const toggleIconsIfDone = () => {
-    const plusIcons = document.querySelectorAll(".js-plusIcon");
-    const checkIcons = document.querySelectorAll(".js-checkIcon");
-
-    plusIcons.forEach((plusIcon, index) => {
-
-      tasks[index].done === true ? plusIcon.classList.add("hide") : plusIcon.classList.remove("hide");
-
-    })
-    checkIcons.forEach((plusIcon, index) => {
-
-      tasks[index].done === true ? plusIcon.classList.remove("hide") : plusIcon.classList.add("hide");
-
-    })
-  }
   const render = () => {
 
     let htmlText = "";
 
     for (const task of tasks) {
-      htmlText += ` <li     class="section__taskItem"><button class="taskItem__button taskItem__button--doneTask js-done"><i
-      class="js-plusIcon fas fa-plus "></i><i class="js-checkIcon fas fa-check hide"></i></button>
-      <p class="js-paragraph list__paragraph">${task.content}</p><button class=" taskItem__button taskItem__button--removeTask js-remove"><i
-      class="fas fa-trash"></i></button>
+      htmlText +=
+        `<li class="section__taskItem">
+        <button class="taskItem__button taskItem__button--doneTask js-done">
+    ${task.done ?'<i class="js-checkIcon fas fa-check"></i>': '<i class= "js-plusIcon fas fa-plus"></i>'}
+        </button>
+        <p class="js-paragraph list__paragraph ${ task.done ? "list__paragraph--done" : "" }" > ${task.content}</p> 
+        <button class=" taskItem__button taskItem__button--removeTask js-remove">
+          <i class="fas fa-trash"></i></button>
       </li>`
 
     };
@@ -68,9 +46,8 @@
     doneButtons.forEach((doneButton, index) => {
       doneButton.addEventListener("click", () => {
 
-        changeButtonColorIfDone(doneButton, index);
-        changeParagraphColorIfDone(index);
-        toggleIconsIfDone()
+        toggleTaskDone(doneButton, index);
+     
       });
     })
 
