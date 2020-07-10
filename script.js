@@ -13,23 +13,28 @@
     const newTaskContent = document.querySelector(".js-newTask").value.trim()
 
     if (newTaskContent !== "") {
-
       tasks = [
         ...tasks,
-        {
-          content: newTaskContent
-        },
+        { content: newTaskContent },
       ];
       render();
-
     };
     document.querySelector(".js-newTask").value = ""
   };
 
   const toggleTaskDone = (doneButton, index) => {
-    tasks[index].done = !tasks[index].done;
+    tasks = [
+      ...tasks.slice(0, index), 
+      { ...tasks[index], done: !tasks[index].done },
+      ...tasks.slice(index + 1)
+    ]
     render()
   }
+
+  // const toggleTaskDone = (doneButton, index) => {
+  //   tasks[index].done = !tasks[index].done;
+  //   render()
+  // }
 
   const bindRemoveEvent = () => {
 
@@ -68,31 +73,23 @@
         <button class=" taskItem__button taskItem__button--removeTask js-remove">
           <i class="fas fa-trash"></i></button>
       </li>`
-
     };
-
     document.querySelector(".js-taskList").innerHTML = htmlText;
-
     bindRemoveEvent()
     bindToggleDoneButtonsEvent()
-
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-
     addNewTask();
     document.querySelector(".js-newTask").focus();
   };
 
-
   const init = () => {
     render();
-
-
     const form = document.querySelector(".js-form")
     form.addEventListener("submit", onFormSubmit);
-
   }
+
   init()
 }
