@@ -8,10 +8,33 @@
 
   const toggleTaskDone = (doneButton, index) => {
     tasks[index].done = !tasks[index].done;
-render()
+    render()
 
   }
 
+  const bindRemoveEvent = () => {
+
+    const removeButtons = document.querySelectorAll(".js-remove");
+
+    removeButtons.forEach((removeButton, index) => {
+      removeButton.addEventListener("click", () => {
+        removeTask(index)
+
+      });
+    });
+  }
+  
+  const bindToggleDoneButtonsEvent = () => {
+    const doneButtons = document.querySelectorAll(".js-done");
+
+    doneButtons.forEach((doneButton, index) => {
+      doneButton.addEventListener("click", () => {
+
+        toggleTaskDone(doneButton, index);
+
+      });
+    })
+  }
   const render = () => {
 
     let htmlText = "";
@@ -31,25 +54,8 @@ render()
 
     document.querySelector(".js-taskList").innerHTML = htmlText;
 
-    const removeButtons = document.querySelectorAll(".js-remove");
-
-    removeButtons.forEach((removeButton, index) => {
-      removeButton.addEventListener("click", () => {
-        removeTask(index)
-
-      });
-    });
-
-
-    const doneButtons = document.querySelectorAll(".js-done");
-
-    doneButtons.forEach((doneButton, index) => {
-      doneButton.addEventListener("click", () => {
-
-        toggleTaskDone(doneButton, index);
-     
-      });
-    })
+    bindRemoveEvent()
+    bindToggleDoneButtonsEvent()
 
   };
 
@@ -77,12 +83,12 @@ render()
 
 
   const init = () => {
+    render();
 
 
     const form = document.querySelector(".js-form")
     form.addEventListener("submit", onFormSubmit);
 
-    render();
   }
   init()
 }
