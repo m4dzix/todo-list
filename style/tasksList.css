@@ -32,25 +32,38 @@
 }
 
 .taskItem__button {
+  border: none;
   width: 30px;
   height: 30px;
   margin: 10px;
   background-color: chartreuse;
   box-shadow: .5px .5px 3px 3px black;
-  transition: 0.3s;
-}
-
-.taskItem__button:hover {
-  opacity: .7;
-  cursor: pointer;
 }
 
 .taskItem__button--doneTask {
   background-color: chartreuse;
+  transition: 0.3s;
+  transition: 0.3s;
 }
 
 .taskItem__button--removeTask {
   background-color: crimson;
+}
+
+.taskItem__button--doneTask:hover {
+  background-color: hsl(90, 100%, 40%);
+}
+
+.taskItem__button--removeTask:hover {
+  background-color: hsl(348, 83%, 37%);
+}
+
+.taskItem__button--doneTask:active {
+  background-color: hsl(90, 100%, 30%);
+}
+
+.taskItem__button--removeTask:active {
+  background-color: hsl(348, 83%, 27%);
 }
 
 i {
@@ -66,4 +79,8 @@ i {
 .list__paragraph {
   padding: 5px 15px;
   overflow: scroll;
+}
+
+.list__paragraph--done {
+  text-decoration: line-through;
 }
