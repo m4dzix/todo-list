@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="/style/header.css">
   <link rel="stylesheet" href="/style/form.css">
   <link rel="stylesheet" href="/style/tasksList.css">
+  <link rel="stylesheet" href="/style/buttonSection.css">
+
   <script defer src="script.js"></script>
 </head>
 
@@ -27,9 +29,9 @@
         <label><input class="form__input js-newTask" name="task" type="text" required></label>
         <button class="form__button">add task</button>
       </form>
-      <section class="section">
-        <button class="section__button section__button--toggleShowAllDoneTasks">Completed tasks</button>
-        <button class="section__button section__button--toggleCheckAllDoneTasks">Mark all tasks complited</button>
+      <section class="section  section__toggleButtons">
+        <button class="section__button section__button--toggleShowAllDoneTasks">Show completed tasks</button>
+        <button class="section__button section__button--toggleCheckAllDoneTasks">Mark all tasks completed</button>
 
       </section>
       <section class="section">

@@ -1,0 +1,21 @@
+.section__toggleButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section__button {
+  border: none;
+  background-color: transparent;
+  text-shadow: 2px 2px 2px #eee;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.section__button:hover {
+  cursor: pointer;
+  color: #333;
+}
+
+.hide {
+  display: none;
+}
