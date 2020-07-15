@@ -1,5 +1,6 @@
 {
   let tasks = [];
+  let hideDoneTasks = false;
 
   const removeTask = (index) => {
     tasks = [
@@ -38,9 +39,17 @@
     render();
   };
 
+
+  const toggleCompletedTasks = () => {
+    const toggleCompletedTasksButton = document.querySelector('.js-toggleHideAllDoneTasks')
+
+    hideDoneTasks = !hideDoneTasks;
+    render();
+  };
+
   const markAllTasksComplted = () => {
     const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
-    
+
     const isAnyTaskDone = tasks.some(({
       done
     }) => !done);
@@ -72,6 +81,11 @@
     });
   };
 
+  const bindToggleCompletedTasks = () => {
+    const toggleCompletedTasksButton = document.querySelector('.js-toggleHideAllDoneTasks')
+    toggleCompletedTasksButton.addEventListener("click", toggleCompletedTasks);
+  };
+
   const bindMarkAllTasksCompltedButtonEvent = () => {
 
     const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
@@ -84,7 +98,7 @@
 
     for (const task of tasks) {
       htmlText +=
-        `<li class="section__taskItem">
+        `<li class="section__taskItem ${task.done && hideDoneTasks ? "section__taskItem--hidden" : ""}">
         <button class="taskItem__button taskItem__button--doneTask js-done">
     ${task.done ?'<i class="js-checkIcon fas fa-check"></i>': '<i class= "js-plusIcon fas fa-plus"></i>'}
         </button>
@@ -104,13 +118,17 @@
     renderTaskContent();
     bindRemoveEvent();
     bindToggleDoneButtonsEvent();
+    bindToggleCompletedTasks();
     bindMarkAllTasksCompltedButtonEvent();
+
   };
 
   const onFormSubmit = (event) => {
+
     event.preventDefault();
     addNewTask();
     document.querySelector(".js-newTask").focus();
+
   };
 
   const init = () => {
