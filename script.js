@@ -23,6 +23,7 @@
       render();
     };
     document.querySelector(".js-newTask").value = ""
+    markAllTasksCompltedButton.disabled = false;
   };
 
   const toggleTaskDone = (doneButton, index) => {
@@ -39,15 +40,14 @@
 
   const markAllTasksComplted = () => {
     const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
-
-
+    
     const isAnyTaskDone = tasks.some(({
       done
-    }) => !done)
+    }) => !done);
     if (isAnyTaskDone) {
       tasks.map(task => task.done = true);
       markAllTasksCompltedButton.disabled = true;
-    }
+    };
 
     render();
   };
