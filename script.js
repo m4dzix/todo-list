@@ -10,7 +10,6 @@
   };
 
   const addNewTask = () => {
-
     const newTaskContent = document.querySelector(".js-newTask").value.trim()
     const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks")
 
@@ -24,7 +23,6 @@
       render();
     };
     document.querySelector(".js-newTask").value = ""
-
   };
 
   const toggleTaskDone = (doneButton, index) => {
@@ -46,15 +44,10 @@
   };
 
   const markAllTasksComplted = () => {
-    const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
-
-    const isAnyTaskDone = tasks.some(({
-      done
-    }) => !done);
-    if (isAnyTaskDone) {
-      tasks.map(task => task.done = true);
-    };
-
+    tasks = tasks.map((task) => ({
+      ...task,
+      done: true
+    }));
     render();
   };
 
@@ -80,14 +73,12 @@
 
   const bindToggleCompletedTasks = () => {
     const toggleCompletedTasksButton = document.querySelector('.js-toggleHideAllDoneTasks')
-
     toggleCompletedTasksButton.addEventListener("click", toggleCompletedTasks);
   };
 
   const bindMarkAllTasksCompltedButtonEvent = () => {
 
     const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
-
     markAllTasksCompltedButton.addEventListener("click", markAllTasksComplted);
   }
 
@@ -109,27 +100,29 @@
     document.querySelector(".js-taskList").innerHTML = htmlText;
   };
 
-
   const renderButtons = () => {
     let htmlButtonsText =
-      `<button class="section__button js-toggleHideAllDoneTasks">
-      ${hideDoneTasks ? "show" : "hide"} completed tasks
-    </button>
-    <button class="section__button js-markAllDoneTasks" ${tasks.every(({
-    done}) => done) ? "disabled":""}>
-    Mark all tasks as completed
-   </button>`;
+      `
+      <button class="section__button js-toggleHideAllDoneTasks">
+        ${hideDoneTasks ? "show" : "hide"} completed tasks
+      </button>
+      <button class="section__button js-markAllDoneTasks" ${tasks.every(({
+      done}) => done) ? "disabled":""}>
+        Mark all tasks as completed
+      </button>
+      `;
 
     const sectionButton = document.querySelector(".section__toggleButtons")
     sectionButton.innerHTML = htmlButtonsText;
 
-    tasks.length !== 0 ? sectionButton.classList.remove("section__button--hidden") :  sectionButton.classList.add("section__button--hidden")
-
+    if (tasks.length) {
+      sectionButton.classList.remove("section__button--hidden")
+    } else {
+      sectionButton.classList.add("section__button--hidden")
+    };
   };
 
-
   const render = () => {
-
     renderButtons();
     renderTaskContent();
     bindRemoveEvent();
@@ -139,11 +132,9 @@
   };
 
   const onFormSubmit = (event) => {
-
     event.preventDefault();
     addNewTask();
     document.querySelector(".js-newTask").focus();
-
   };
 
   const init = () => {
