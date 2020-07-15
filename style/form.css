@@ -39,4 +39,5 @@
 .form__button:hover {
   background-color: hsl(34, 84%, 11%);
   cursor: pointer;
+  transform: scaleX(1.1);
 }
