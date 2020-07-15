@@ -6,16 +6,19 @@
       ...tasks.slice(0, index), ...tasks.slice(index + 1)
     ]
     render();
-  }
+  };
 
   const addNewTask = () => {
 
     const newTaskContent = document.querySelector(".js-newTask").value.trim()
+    const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks")
 
     if (newTaskContent !== "") {
       tasks = [
         ...tasks,
-        { content: newTaskContent },
+        {
+          content: newTaskContent
+        },
       ];
       render();
     };
@@ -24,43 +27,59 @@
 
   const toggleTaskDone = (doneButton, index) => {
     tasks = [
-      ...tasks.slice(0, index), 
-      { ...tasks[index], done: !tasks[index].done },
+      ...tasks.slice(0, index),
+      {
+        ...tasks[index],
+        done: !tasks[index].done
+      },
       ...tasks.slice(index + 1)
-    ]
-    render()
-  }
+    ];
+    render();
+  };
 
-  // const toggleTaskDone = (doneButton, index) => {
-  //   tasks[index].done = !tasks[index].done;
-  //   render()
-  // }
+  const markAllTasksComplted = () => {
+    const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
+
+
+    const isAnyTaskDone = tasks.some(({
+      done
+    }) => !done)
+    if (isAnyTaskDone) {
+      tasks.map(task => task.done = true);
+      markAllTasksCompltedButton.disabled = true;
+    }
+
+    render();
+  };
 
   const bindRemoveEvent = () => {
-
     const removeButtons = document.querySelectorAll(".js-remove");
 
     removeButtons.forEach((removeButton, index) => {
       removeButton.addEventListener("click", () => {
         removeTask(index)
-
       });
     });
-  }
+  };
 
   const bindToggleDoneButtonsEvent = () => {
     const doneButtons = document.querySelectorAll(".js-done");
 
     doneButtons.forEach((doneButton, index) => {
       doneButton.addEventListener("click", () => {
-
         toggleTaskDone(doneButton, index);
-
       });
-    })
-  }
-  const render = () => {
+    });
+  };
 
+  const bindMarkAllTasksCompltedButtonEvent = () => {
+
+    const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
+
+    markAllTasksCompltedButton.addEventListener("click", markAllTasksComplted);
+  }
+
+  const renderTaskContent = () => {
     let htmlText = "";
 
     for (const task of tasks) {
@@ -74,9 +93,18 @@
           <i class="fas fa-trash"></i></button>
       </li>`
     };
+
     document.querySelector(".js-taskList").innerHTML = htmlText;
-    bindRemoveEvent()
-    bindToggleDoneButtonsEvent()
+  };
+
+  document.querySelector(".js-markAllDoneTasks").addEventListener("click", markAllTasksComplted);
+
+  const render = () => {
+
+    renderTaskContent();
+    bindRemoveEvent();
+    bindToggleDoneButtonsEvent();
+    bindMarkAllTasksCompltedButtonEvent();
   };
 
   const onFormSubmit = (event) => {
@@ -87,9 +115,9 @@
 
   const init = () => {
     render();
-    const form = document.querySelector(".js-form")
+    const form = document.querySelector(".js-form");
     form.addEventListener("submit", onFormSubmit);
-  }
+  };
 
-  init()
-}
+  init();
+};
