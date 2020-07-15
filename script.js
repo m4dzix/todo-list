@@ -121,7 +121,9 @@
    </button>`;
 
     const sectionButton = document.querySelector(".section__toggleButtons")
-    sectionbutton.innerHTML = htmlButtonsText;
+    sectionButton.innerHTML = htmlButtonsText;
+
+    tasks.length !== 0 ? sectionButton.classList.remove("section__button--hidden") :  sectionButton.classList.add("section__button--hidden")
 
   };
 
