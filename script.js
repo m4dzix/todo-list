@@ -89,11 +89,11 @@
       htmlText +=
         `<li class="section__taskItem ${task.done && hideDoneTasks ? "section__taskItem--hidden" : ""}">
         <button class="taskItem__button taskItem__button--doneTask js-done">
-    ${task.done ?'<i class="js-checkIcon fas fa-check"></i>': ''}
+    ${task.done ?'&#10004': ''}
         </button>
         <p class="js-paragraph list__paragraph ${ task.done ? "list__paragraph--done" : "" }" > ${task.content}</p> 
         <button class=" taskItem__button taskItem__button--removeTask js-remove">
-          <i class="fas fa-trash"></i></button>
+        &#10006</button>
       </li>`
     };
 

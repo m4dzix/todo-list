@@ -26,7 +26,7 @@ Task content will show up as a part of the task list.
 - Mark as complete: Click green box on left from task content.
 Second click on confirmed icon will reverse 'completed' animation.
 
-- Remove task: click red icon with trash.
+- Remove task: click red icon with `x`.
 
 - Mark all tasks as completed: click on button `MARK ALL TASKS AS COMPLETED` on menubar above task list.
 
