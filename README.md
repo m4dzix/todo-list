@@ -1,5 +1,11 @@
 # TO DO LIST
 
+## Live link
+
+[https://m4dzix.github.io/currency-converter/](https://m4dzix.github.io/currency-converter/)
+[https://m4dzix.github.io/toDoList/](https://m4dzix.github.io/toDoList/)
+
+
 Simple and basic to-do list - helps organise tasks.
 Made during the frontend developer course from [“youcode.pl”](https://youcode.pl).
 
@@ -26,6 +32,7 @@ Second click on confirmed icon will reverse 'completed' animation.
 
 - Hide each completed task: click the `HIDE COMPLETED TASKS` button.
 When you click again, all completed tasks will be displayed.
+
 
 ## Used technologies:
 
