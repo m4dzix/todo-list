@@ -2,7 +2,6 @@
 
 ## Live link
 
-[https://m4dzix.github.io/currency-converter/](https://m4dzix.github.io/currency-converter/)
 [https://m4dzix.github.io/toDoList/](https://m4dzix.github.io/toDoList/)
 
 
