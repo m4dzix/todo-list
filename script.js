@@ -37,7 +37,6 @@
     render();
   };
 
-
   const toggleHideCompletedTasks = () => {
     hideDoneTasks = !hideDoneTasks;
     render();
@@ -51,7 +50,11 @@
     render();
   };
 
-  const bindRemoveEvent = () => {
+  bindTasksListener = ()=>{
+
+    const form = document.querySelector(".js-form");
+    form.addEventListener("submit", onFormSubmit);
+
     const removeButtons = document.querySelectorAll(".js-remove");
 
     removeButtons.forEach((removeButton, index) => {
@@ -59,9 +62,7 @@
         removeTask(index)
       });
     });
-  };
 
-  const bindToggleDoneButtonsEvent = () => {
     const doneButtons = document.querySelectorAll(".js-done");
 
     doneButtons.forEach((doneButton, index) => {
@@ -69,19 +70,17 @@
         toggleTaskDone(doneButton, index);
       });
     });
-  };
-
-  const bindToggleHideCompletedTasks = () => {
+  
+};
+const bindTopButtonsListener = ()=>{
+ 
     const toggleCompletedTasksButton = document.querySelector('.js-toggleHideAllDoneTasks')
     toggleCompletedTasksButton.addEventListener("click", toggleHideCompletedTasks);
-  };
-
-  const bindMarkAllTasksCompltedButtonEvent = () => {
 
     const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
     markAllTasksCompltedButton.addEventListener("click", markAllTasksComplted);
-  }
-
+ 
+};
   const renderTaskContent = () => {
     let htmlText = "";
 
@@ -122,25 +121,21 @@
     };
   };
 
-  const render = () => {
-    renderButtons();
-    renderTaskContent();
-    bindRemoveEvent();
-    bindToggleDoneButtonsEvent();
-    bindToggleHideCompletedTasks();
-    bindMarkAllTasksCompltedButtonEvent();
-  };
-
   const onFormSubmit = (event) => {
     event.preventDefault();
     addNewTask();
     document.querySelector(".js-newTask").focus();
   };
+  
+  const render = () => {
+    renderButtons();
+    renderTaskContent();
+    bindTopButtonsListener();
+    bindTasksListener();
+  };
 
   const init = () => {
     render();
-    const form = document.querySelector(".js-form");
-    form.addEventListener("submit", onFormSubmit);
   };
 
   init();
