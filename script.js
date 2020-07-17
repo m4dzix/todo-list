@@ -88,11 +88,12 @@ const bindTopButtonsListener = ()=>{
       htmlText +=
         `<li class="section__taskItem ${task.done && hideDoneTasks ? "section__taskItem--hidden" : ""}">
         <button class="taskItem__button taskItem__button--doneTask js-done">
-    ${task.done ?'&#10004': ''}
+    ${task.done ?'<i class="js-checkIcon fas fa-check"></i>': ''}
         </button>
         <p class="js-paragraph list__paragraph ${ task.done ? "list__paragraph--done" : "" }" > ${task.content}</p> 
         <button class=" taskItem__button taskItem__button--removeTask js-remove">
-        &#128465</button>
+          <i class="fas fa-trash"></i></button>
+       </button>
       </li>`
     };
 
@@ -126,14 +127,13 @@ const bindTopButtonsListener = ()=>{
     addNewTask();
     document.querySelector(".js-newTask").focus();
   };
-  
   const render = () => {
     renderButtons();
     renderTaskContent();
     bindTopButtonsListener();
     bindTasksListener();
   };
-
+  
   const init = () => {
     render();
   };
