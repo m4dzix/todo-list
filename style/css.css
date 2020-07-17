@@ -8,11 +8,11 @@ html {
   box-sizing: inherit;
 }
 
-body{
+body {
   background-image: url(https://cdn.pixabay.com/photo/2016/03/15/02/42/floor-1256804_960_720.jpg);
-  background-position:center ;
-background-size: cover;
-background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 

@@ -50,7 +50,7 @@
     render();
   };
 
-  bindTasksListener = ()=>{
+  bindTasksListener = () => {
 
     const form = document.querySelector(".js-form");
     form.addEventListener("submit", onFormSubmit);
@@ -70,17 +70,17 @@
         toggleTaskDone(doneButton, index);
       });
     });
-  
-};
-const bindTopButtonsListener = ()=>{
- 
+
+  };
+  const bindTopButtonsListener = () => {
+
     const toggleCompletedTasksButton = document.querySelector('.js-toggleHideAllDoneTasks')
     toggleCompletedTasksButton.addEventListener("click", toggleHideCompletedTasks);
 
     const markAllTasksCompltedButton = document.querySelector(".js-markAllDoneTasks");
     markAllTasksCompltedButton.addEventListener("click", markAllTasksComplted);
- 
-};
+
+  };
   const renderTaskContent = () => {
     let htmlText = "";
 
@@ -134,7 +134,7 @@ const bindTopButtonsListener = ()=>{
     bindTopButtonsListener();
     bindTasksListener();
   };
-  
+
   const init = () => {
     render();
   };

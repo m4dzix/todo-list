@@ -12,12 +12,14 @@
   text-transform: uppercase;
   padding: 5px;
 }
+
 @media (max-width:414px) and (orientation:portrait) {
   .section__toggleButtons {
     margin: 10px;
-   flex-direction: column;
+    flex-direction: column;
   }
 }
+
 .section__button:hover {
   cursor: pointer;
   color: #333;
