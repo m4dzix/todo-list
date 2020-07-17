@@ -1,5 +1,7 @@
 # TO DO LIST
 
+![ToDoList](https://github.com/m4dzix/toDoList/blob/master/images/toDoListSmall.png?raw=true)
+
 Simple and basic to-do list - helps organise tasks.
 Made during the frontend developer course from [“youcode.pl”](https://youcode.pl).
 
