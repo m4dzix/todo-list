@@ -78,7 +78,6 @@ i {
 
 .list__paragraph {
   padding: 5px 15px;
-  overflow: scroll;
 }
 
 .list__paragraph--done {
