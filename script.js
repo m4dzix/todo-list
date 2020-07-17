@@ -38,7 +38,7 @@
   };
 
 
-  const toggleCompletedTasks = () => {
+  const toggleHideCompletedTasks = () => {
     hideDoneTasks = !hideDoneTasks;
     render();
   };
@@ -71,9 +71,9 @@
     });
   };
 
-  const bindToggleCompletedTasks = () => {
+  const bindToggleHideCompletedTasks = () => {
     const toggleCompletedTasksButton = document.querySelector('.js-toggleHideAllDoneTasks')
-    toggleCompletedTasksButton.addEventListener("click", toggleCompletedTasks);
+    toggleCompletedTasksButton.addEventListener("click", toggleHideCompletedTasks);
   };
 
   const bindMarkAllTasksCompltedButtonEvent = () => {
@@ -93,7 +93,7 @@
         </button>
         <p class="js-paragraph list__paragraph ${ task.done ? "list__paragraph--done" : "" }" > ${task.content}</p> 
         <button class=" taskItem__button taskItem__button--removeTask js-remove">
-        &#10006</button>
+        &#128465</button>
       </li>`
     };
 
@@ -127,7 +127,7 @@
     renderTaskContent();
     bindRemoveEvent();
     bindToggleDoneButtonsEvent();
-    bindToggleCompletedTasks();
+    bindToggleHideCompletedTasks();
     bindMarkAllTasksCompltedButtonEvent();
   };
 
