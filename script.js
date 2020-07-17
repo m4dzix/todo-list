@@ -103,9 +103,9 @@ const bindTopButtonsListener = ()=>{
   const renderButtons = () => {
     let htmlButtonsText =
       `
-      <button class="section__button js-toggleHideAllDoneTasks">
-        ${tasks.some(({
-          done}) => done)&& hideDoneTasks ? "show" : "hide"} completed tasks
+      <button class="section__button js-toggleHideAllDoneTasks"${tasks.every(({
+        done}) => !done) ? "disabled":""}>
+        ${hideDoneTasks ? "show" : "hide"} completed tasks
       </button>
       <button class="section__button js-markAllDoneTasks" ${tasks.every(({
       done}) => done) ? "disabled":""}>
