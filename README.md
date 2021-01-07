@@ -5,7 +5,7 @@
 Simple and basic to-do list - helps organise tasks.
 Made during the frontend developer course from [“youcode.pl”](https://youcode.pl).
 
-**Live link:** [https://m4dzix.github.io/toDoList/](https://m4dzix.github.io/toDoList/)
+**Live link:** [https://m4dzix.github.io/todo-list/](https://m4dzix.github.io/todo-list/)
 
 ## How to use:
 
